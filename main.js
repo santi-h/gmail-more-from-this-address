@@ -12,6 +12,11 @@ function addLinks() {
       appended_elements = [];
 
       if (from_address !== undefined) {
+        if (!$('#aso_search_form_anchor').length) {
+          // No point in continuing here if the location where the links are going to be
+          // does not exist yet. This happens when the user navigates to an email directly.
+          return;
+        }
         const from_domain = from_address.split('@')[1];
 
         const user_number = window.location.href.match(/https:\/\/mail.google.com\/mail\/u\/(\d+)/)[1];
@@ -24,7 +29,7 @@ function addLinks() {
           '</div>'
         );
 
-        $('#aso_search_form_anchor').parent().append(new_element)
+        $('#aso_search_form_anchor').parent().append(new_element);
         appended_elements.push(new_element);
       }
 
@@ -34,4 +39,6 @@ function addLinks() {
   }, 1000);
 }
 
-addLinks();
+jQuery(document).ready(function(){
+  addLinks();
+});
