@@ -2,7 +2,7 @@ function addLinks() {
   let last_printed_from_address = undefined;
   let appended_elements = [];
 
-  window.setInterval(function(){
+  window.setInterval(function() {
     const from_address = $('[role=main] h3 [role=gridcell] > span:first-child').data('hovercard-id');
 
     if (from_address !== last_printed_from_address) {
@@ -39,6 +39,6 @@ function addLinks() {
   }, 1000);
 }
 
-jQuery(document).ready(function(){
+jQuery(document).ready(function() {
   addLinks();
 });
