@@ -20,8 +20,8 @@ function addLinks() {
 
         const from_domain = from_address.split('@')[1];
         const user_number = window.location.href.match(/https:\/\/mail\.google\.com\/mail\/u\/(\d+)/)[1];
-        const href_address = `https://mail.google.com/mail/u/${user_number}/#search/in%3Ainbox+from%3A${from_address}`;
-        const href_domain = `https://mail.google.com/mail/u/${user_number}/#search/in%3Ainbox+from%3A${from_domain}`;
+        const href_address = `https://mail.google.com/mail/u/${user_number}/#search/in:inbox+from:${from_address}`;
+        const href_domain = `https://mail.google.com/mail/u/${user_number}/#search/in:inbox+from:${from_domain}`;
 
         const new_element = $(
           '<div style="text-align: right; padding-right: 6%;">' +
