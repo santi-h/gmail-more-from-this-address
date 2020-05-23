@@ -9,19 +9,3 @@
   }],
   "manifest_version": 2
 }
-
-// This works: ["https://mail.google.com/mail/u/0/*"]
-
-    // "matches": ["https://mail.google.com/mail/u/*/#inbox/*"]
-
-// {
-//   "name": "Github Branch Commands",
-//   "version": "1.0",
-//   "description": "Lets you copy the command to checkout a branch from pull requests on github",
-//   "content_scripts": [{
-//     "css": ["styles.css"],
-//     "js": ["jquery-3.3.1.min.js", "content.js"],
-//     "matches": ["https://github.com/*/*/pull/*"]
-//   }],
-//   "manifest_version": 2
-// }

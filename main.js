@@ -17,8 +17,8 @@ function addLinks() {
           // does not exist yet. This happens when the user navigates to an email directly.
           return;
         }
-        const from_domain = from_address.split('@')[1];
 
+        const from_domain = from_address.split('@')[1];
         const user_number = window.location.href.match(/https:\/\/mail.google.com\/mail\/u\/(\d+)/)[1];
         const href_address = `https://mail.google.com/mail/u/${user_number}/#search/in%3Ainbox+from%3A${from_address}`;
         const href_domain = `https://mail.google.com/mail/u/${user_number}/#search/in%3Ainbox+from%3A${from_domain}`;
