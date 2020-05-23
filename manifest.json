@@ -2,7 +2,7 @@
   "name": "More email from current address in inbox",
   "version": "1.0",
   "description": "Adds links to gmail to see more emails in your inbox from current address",
-  "permissions": ["tabs", "declarativeContent", "storage"],
+  "permissions": [],
   "content_scripts": [{
     "js": ["jquery-3.5.1.min.js", "main.js"],
     "matches": ["https://mail.google.com/mail/u/*/*"]
