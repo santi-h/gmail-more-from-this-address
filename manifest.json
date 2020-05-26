@@ -1,6 +1,6 @@
 {
   "name": "More email from current address in inbox",
-  "version": "1.0",
+  "version": "0.0.1",
   "description": "Adds links to gmail to see more emails in your inbox from current address",
   "permissions": [],
   "content_scripts": [{
