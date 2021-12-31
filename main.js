@@ -18,7 +18,15 @@ function addLinks() {
           return;
         }
 
-        const from_domain = from_address.split('@')[1];
+        const fully_qualified_domain = from_address.split('@')[1];
+        const from_domain = fully_qualified_domain.match(/([^\.]+\.[^\.]+)\s*$/)[1];
+
+        /*
+        from_address            = 'shipping_notification@orders.apple.com'
+        fully_qualified_domain  = 'orders.apple.com'
+        from_domain             = 'apple.com'
+        */
+
         const user_number = window.location.href.match(/https:\/\/mail\.google\.com\/mail\/u\/(\d+)/)[1];
         const href_address = `https://mail.google.com/mail/u/${user_number}/#search/in:inbox+from:${from_address}`;
         const href_domain = `https://mail.google.com/mail/u/${user_number}/#search/in:inbox+from:${from_domain}`;
