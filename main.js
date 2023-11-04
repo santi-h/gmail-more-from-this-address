@@ -4,6 +4,13 @@ function addLinks() {
 
   window.setInterval(function() {
     const from_address = $('[role=main] h3 [role=gridcell] > span:first-child').data('hovercard-id');
+    // const reply_to_address = $('tr:contains("reply-to:") > td:nth-child(2) > span > span').data('hovercard-id');
+    // const reply_to_address = $('tr:contains("reply-to:")').text();
+    // const reply_to_address = $("span:contains('reply-to:')").text();
+    // console.log(`Surprise [${reply_to_address}]`);
+    // debugger;
+    // const version = '5';
+    // console.log(`Surprise! [${reply_to_address}]`);
 
     if (from_address !== last_printed_from_address) {
       appended_elements.forEach(function (element, idx) {
@@ -28,11 +35,11 @@ function addLinks() {
         */
 
         const user_number = window.location.href.match(/https:\/\/mail\.google\.com\/mail\/u\/(\d+)/)[1];
-        const href_address = `https://mail.google.com/mail/u/${user_number}/#search/in:inbox+from:${from_address}`;
+        const href_address = `https://mail.google.com/mail/u/${user_number}/#search/in:inbox+from:${encodeURIComponent(from_address)}`;
         const href_domain = `https://mail.google.com/mail/u/${user_number}/#search/in:inbox+from:${from_domain}`;
 
         const new_element = $(
-          '<div style="text-align: right; padding-right: 6%;">' +
+          '<div style="text-align: right; padding-right: 6%; color: black;">' +
             `<a href="${href_address}" target="_blank">More from <b>${from_address}</b></a> | <a href="${href_domain}">More from <b>${from_domain}</b></a>` +
           '</div>'
         );
