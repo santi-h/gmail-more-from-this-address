@@ -4,14 +4,6 @@ function addLinks() {
 
   window.setInterval(function() {
     const from_address = $('[role=main] h3 [role=gridcell] > span:first-child').data('hovercard-id');
-    // const reply_to_address = $('tr:contains("reply-to:") > td:nth-child(2) > span > span').data('hovercard-id');
-    // const reply_to_address = $('tr:contains("reply-to:")').text();
-    // const reply_to_address = $("span:contains('reply-to:')").text();
-    // console.log(`Surprise [${reply_to_address}]`);
-    // debugger;
-    // const version = '5';
-    // console.log(`Surprise! [${reply_to_address}]`);
-
     if (from_address !== last_printed_from_address) {
       appended_elements.forEach(function (element, idx) {
         element.remove();
@@ -27,13 +19,6 @@ function addLinks() {
 
         const fully_qualified_domain = from_address.split('@')[1];
         const from_domain = fully_qualified_domain.match(/([^\.]+\.[^\.]+)\s*$/)[1];
-
-        /*
-        from_address            = 'shipping_notification@orders.apple.com'
-        fully_qualified_domain  = 'orders.apple.com'
-        from_domain             = 'apple.com'
-        */
-
         const user_number = window.location.href.match(/https:\/\/mail\.google\.com\/mail\/u\/(\d+)/)[1];
         const href_address = `https://mail.google.com/mail/u/${user_number}/#search/in:inbox+from:${encodeURIComponent(from_address)}`;
         const href_domain = `https://mail.google.com/mail/u/${user_number}/#search/in:inbox+from:${from_domain}`;
@@ -50,7 +35,6 @@ function addLinks() {
 
       last_printed_from_address = from_address;
     }
-
   }, 1000);
 }
 

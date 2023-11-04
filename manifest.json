@@ -2,10 +2,9 @@
   "name": "More from this address",
   "version": "0.0.1",
   "description": "Adds links to gmail to see more emails in your inbox from current address",
-  "permissions": [],
   "content_scripts": [{
-    "js": ["jquery-3.5.1.min.js", "main.js"],
+    "js": ["jquery-3.5.1.min.js", "content.js"],
     "matches": ["https://mail.google.com/mail/u/*/*"]
   }],
-  "manifest_version": 2
+  "manifest_version": 3
 }
